@@ -1,0 +1,4 @@
+What happens when you initialize a repository? 
+	It starts tracking commits
+Why do you need to do it?
+	it enables you to view history and restore versions as needed
