@@ -5,7 +5,76 @@ Why do you need to do it?
 
 How is the staging area different from the working directory and the repository? You make changes to your working directory then ‘git add’ to add them to the staging directory
 
-What value do you think it offers? It allows you to group files before a commit
+git add <file name>
+will add the file from the working directory to the staging area
+It allows you to group files before a commit
 
 subl .bash_profile
 Run this command to open sublime and the name of the file
+
+git diff
+compares your working directory to your staging area. Remember, items are added to the staging area by performing git add <name of file>
+
+git status 
+will show the files in the working directory that haven’t been added to the staging area
+
+git diff —-staged 
+will show the differences between staged and the currently committed file(s)
+
+git reset —hard
+will reset your working directory to the master (HEAD)
+
+master
+is the main branch
+
+branches
+are labels for your commits
+
+git branch
+shows the branches available and the branch you are on
+
+git branch <branch name>
+creates a new branch from the master 
+
+git checkout <branch name>
+switches to branch name and updates your working directory
+when switching to the master branch, it automatically updates your working directory
+
+git log —-graph —oneline master <branch name>
+compares the history from master and <branch name>
+
+git checkout -b <branch name>
+quicker way to create branches and checkout
+
+Merging Branches
+when merging 2 branches, only remove lines based on whether it was present in the master
+
+git merge master <branch name>
+this merges the branch name with the master and keeps all the commits for the log *but the branch will be removed
+
+git show <commit number>
+this shows the commit compared to it’s parent (not the whole master)
+
+git credential-osxkeychain
+run this to check if you userid/password cache is available.
+if downloaded, you should get this: usage: git credential-osxkeychain <get|store|erase>
+then run:
+
+git config --global credential.helper osxkeychain
+then run this config to complete the configuration
+
+git remote
+to check for any remotes
+Remotes are a way to migrate commits (and history) to a repository on Github
+
+git remote add origin git@github.com:<repository on github>
+origin is a common name for a single remote
+this statement adds origin as a remote which is located at Github.com
+
+git remove -v
+to see the remotes attached to your local
+
+git push origin master
+this pushes the master branch to github remote (origin)
+
+git fetch master origin 
